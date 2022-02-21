@@ -28,15 +28,17 @@ func  SetupDb() *gorm.DB {
 func SetAppConfig(app *fiber.App){
 	app.Use(logger.New())
 	app.Use(cors.New())
+	
 	err := godotenv.Load()
 	if err != nil {
 		log.Fatalf("Some error occured loading env variables. Err: %s", err)
 	}
+	
 	db := SetupDb()
-
 	users.InitMigration(db)
+	
 	appRoutes := app.Group(os.Getenv("CONTEXT_PATH"))
+	
 	SetupRouter(appRoutes)
-	log.Fatal(app.Listen(":" + os.Getenv("PORT")))
 }
 

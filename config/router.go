@@ -8,5 +8,5 @@ import (
 
 
 func SetupRouter(router fiber.Router){
-		users.SetupUserRoutes(router)
+	users.SetupUserRoutes(router)
 }

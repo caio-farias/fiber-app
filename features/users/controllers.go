@@ -78,5 +78,5 @@ func DeleteUser(c *fiber.Ctx) error {
 	}
 
 	deleteBydId(&user, id)
-	return c.Status(fiber.StatusOK).SendString(utils.UserDeleted)
+	return c.SendStatus(fiber.StatusOK)
 }
