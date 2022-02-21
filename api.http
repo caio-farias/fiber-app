@@ -1,0 +1,38 @@
+
+@url= http://localhost:3333/api/v1
+
+####
+GET {{url}}/users HTTP/1.1
+Content-Type: application/json
+
+####
+GET {{url}}/users/1 HTTP/1.1
+Content-Type: application/json
+
+
+####
+POST {{url}}/users HTTP/1.1
+Content-Type: application/json
+
+{
+  "firstName": "Caio",
+  "lastName": "Farias",
+  "email": "caio1123@email.com",
+  "username": "caiofs1123",
+  "password": "caio-pass"
+}
+
+
+####
+PATCH {{url}}/users/1 HTTP/1.1
+Content-Type: application/json
+
+{
+  "firstName": "TESTE1",
+  "lastName": "TESTE2"
+}
+
+
+####
+DELETE {{url}}/users/1 HTTP/1.1
+Content-Type: application/json
